@@ -1,14 +1,17 @@
 # A simple base of docker infrastructure
 
-Revision: November 2023
+**Revision**: November 2023
 
-**keywords**: software-architecture, IaC, Terraform, AWS
+**Keywords**: *software-architecture, IaC, Terraform, AWS*
 
-*contacts*: Markus von Steht
+**Contacts**: Markus von Steht
 
 ## Description
 
-Getting started with Terraform on AWS with SSO
+Getting started with Terraform on AWS with SSO. Example follows the standard tutorial in Hashicorp's [website](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build) but diverts in some points to be applicable to my own AWS setup:
+
+- Using AWS SSO instead of standard credentials.
+- Being restricted to a particular AWS region by corporate policy. As we are not able to use the hard-coded AMI ID for `us-east-1` we are performing a lookup for the correct ID for that region [instead](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build#troubleshooting).
 
 ### Getting started with the native AWS provider
 
