@@ -1,4 +1,4 @@
-# A simple base of docker infrastructure
+# A simple base for Terraform-based infrastructure deployment using the AWS provider
 
 **Revision**: November 2023
 
