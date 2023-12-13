@@ -65,6 +65,18 @@ Getting started with Terraform on AWS with SSO. Example follows the standard tut
     terraform plan
     ```
 
+- Execute and save dry-run as a binary plan file:
+
+    ```bash
+    terraform plan -out <filename>
+    ```
+
+- Visualize plan:
+
+    ```bash
+    terraform show -json <filename>
+    ```
+
 - Deploy infrastructure:
 
     ```bash
