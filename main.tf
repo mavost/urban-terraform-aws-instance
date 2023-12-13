@@ -9,34 +9,19 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
+provider "random" {}
+
 provider "aws" {
   region  = "eu-central-1"
   profile = "AdministratorAccess"
 }
 
-data "aws_ami" "ubuntu" {
-  most_recent = true
+# module "chapter_01" {
+#   source = "./chapter_01"
+# }
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
-
-
-
-resource "aws_instance" "app_server" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "ExampleAppServerInstance"
-  }
+module "chapter_02" {
+  source = "./chapter_02"
+  # send variable(s) to module
+  pet_food = var.pet_food
 }
